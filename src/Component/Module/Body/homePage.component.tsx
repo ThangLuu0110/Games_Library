@@ -15,6 +15,9 @@ export default function HomePage(){
                        categoryListName.map(category => (
                            <li key={category.index} className="category-item">
                                <img src={category.image} alt="" />
+                               <div className="category-item__info">
+                                   
+                               </div>
                            </li>
                        ))
                    }
