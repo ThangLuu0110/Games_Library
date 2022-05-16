@@ -8,11 +8,11 @@ interface HeaderState {
 export default class Header extends Component {
     pageTitle = 'Games Market';
 
-    tabMenuList: { index: number; tabName: string; }[] = [
-        { index: 0, tabName: 'Home' },
-        { index: 1, tabName: 'About' },
-        { index: 2, tabName: 'Products' },
-        { index: 3, tabName: 'Contact' },
+    tabMenuList: { index: number; tabName: string; tabPath: string }[] = [
+        { index: 0, tabName: 'Home', tabPath: 'home' },
+        { index: 1, tabName: 'About', tabPath: 'about' },
+        { index: 2, tabName: 'Products', tabPath: 'product'},
+        { index: 3, tabName: 'Contact', tabPath: 'contact'},
     ]
 
     state = {
