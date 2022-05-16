@@ -9,10 +9,9 @@ export default class Header extends Component {
     pageTitle = 'Games Market';
 
     tabMenuList: { index: number; tabName: string; tabPath: string }[] = [
-        { index: 0, tabName: 'Home', tabPath: 'home' },
-        { index: 1, tabName: 'About', tabPath: 'about' },
-        { index: 2, tabName: 'Products', tabPath: 'product'},
-        { index: 3, tabName: 'Contact', tabPath: 'contact'},
+        { index: 0, tabName: 'Home', tabPath: ''},
+        { index: 1, tabName: 'About', tabPath: 'about'},
+        { index: 2, tabName: 'Games', tabPath: 'game'},
     ]
 
     state = {

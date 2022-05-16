@@ -8,11 +8,12 @@ ul{
 li{
     list-style: none;
 }
-.app-wrapper{
+.web-wrapper{
     font-size: $text-size;
     font-family: "Roboto", sans-serif;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    background-color: $background-color;
 }
 a{
     text-decoration: none;
