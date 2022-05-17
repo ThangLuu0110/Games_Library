@@ -13,11 +13,14 @@ export default class GamesPage extends Component {
     componentDidMount() {
         getGameData()
             .then(games => {
+                console.log(games);
+                
                 this.setState({
                     ...this.state,
                     gameList: games,
                 })
-            }, () => { })
+            }, () => { ;
+            })
     }
 
     render() {
@@ -27,8 +30,10 @@ export default class GamesPage extends Component {
                     <ul className="gamespage-list">
                         {
                             this.state.gameList.map(game => (
-                                <li key={game.id} className="">
-                                    {game.title}
+                                <li key={game.id} className="items">
+                                    <div className="items-image">
+                                        <img src={`${game.thumbnail}`} alt="" />
+                                    </div>
                                 </li>
                             ))
                         }

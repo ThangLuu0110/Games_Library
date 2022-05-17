@@ -41,6 +41,7 @@ export interface GameData {
     genre: string;
     publisher: string;
     releaseDate: string;
+    thumbnail: string;
 }
 
 export const categoryList:
