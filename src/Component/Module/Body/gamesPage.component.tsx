@@ -34,6 +34,9 @@ export default class GamesPage extends Component {
                                     <div className="items-image">
                                         <img src={`${game.thumbnail}`} alt="" />
                                     </div>
+                                    <div className="items-info">
+                                        {game.title}
+                                    </div>
                                 </li>
                             ))
                         }
