@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import WebContent from './Component/Module';
+
 import './assets/scss/styles.scss';
+import WebContent from './Component/Module';
 
 class App extends Component {
   render() {

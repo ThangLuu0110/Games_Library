@@ -49,84 +49,101 @@ export const categoryList:
         categoryName: string,
         image: any,
         defination: string,
+        games: string,
     }> = [
         {
             index: 0,
             categoryName: "Battle Royale",
             image: BattleRoyale,
-            defination: 
-            'A battle royale game is an online multiplayer video game genre that blends last-man-standing gameplay with the survival, exploration and scavenging elements of a survival game.'
+            defination:
+                'A battle royale game is an online multiplayer video game genre that blends last-man-standing gameplay with the survival, exploration and scavenging elements of a survival game.',
+            games: 'Apex Legends, Fornite, Call Of Duty: Modern Warface',
         },
         {
             index: 1,
             categoryName: "MMORPG",
             image: MMORPG,
-            defination: 
-            'A massively multiplayer online role-playing game (MMORPG) is a video game that combines aspects of a role-playing video game and a massively multiplayer online game.',
+            defination:
+                'A massively multiplayer online role-playing game (MMORPG) is a video game that combines aspects of a role-playing video game and a massively multiplayer online game.',
+            games: 'Elden Ring, Path of Exile, Genshin Impact',
         },
         {
             index: 2,
             categoryName: "Fighting",
             image: Fighting,
-            defination: 
-            'A fighting game (also known as versus fighting game) is a video game genre that involves combat between two (or more) players. Fighting game combat features mechanics such as blocking, grappling, counter-attacking, and chaining attacks together into "combos".',
+            defination:
+                'A fighting game (also known as versus fighting game) is a video game genre that involves combat between two (or more) players. Fighting game combat features mechanics such as blocking, grappling, counter-attacking, and chaining attacks together into "combos".',
+            games: 'Super Smash Bros. Melee, Super Smash Bros. Ultimate, ',
         },
         {
             index: 3,
             categoryName: "Shooter",
             image: Shooter,
-            defination: 
-            "Shooter video games or shooters are a subgenre of action video games where the focus is almost entirely on the defeat of the character's enemies using the weapons given to the player. Usually these weapons are firearms or some other long-range weapons, and can be used in combination with other tools such as grenades for indirect offense, armor for additional defense, or accessories such as telescopic sights to modify the behavior of the weapons.",
+            defination:
+                "Shooter video games or shooters are a subgenre of action video games where the focus is almost entirely on the defeat of the character's enemies using the weapons given to the player.",
+            games: '',
         },
         {
             index: 4,
             categoryName: "Card Game",
             image: CardGames,
-            defination: '',
+            defination:
+                'A card game is any game using playing cards as the primary device with which the game is played, be they traditional or game-specific.',
+            games: 'Hearthstone, Yu-Gi-Oh! Master Duel, Magic: The Gathering',
         },
         {
             index: 5,
             categoryName: "MOBA",
             image: MOBA,
-            defination: 
-            '“MOBA” stands for “multiplayer online battle arena.” Sometimes MOBA games are referred to as “action real-time strategy.” In fact, the very first MOBA games were user-created mods (modifications) of real-time strategy games.',
+            defination:
+                '“MOBA” stands for “multiplayer online battle arena.” Sometimes MOBA games are referred to as “action real-time strategy.” In fact, the very first MOBA games were user-created mods (modifications) of real-time strategy games.',
+            games: 'League of Legends, VALORANT, Dota 2',
         },
         {
             index: 6,
             categoryName: "Racing",
             image: Racing,
-            defination: 
-            'Racing games are a video game genre in which the player participates in a racing competition with any type of land, water, air, or space vehicles. They may be based on anything from real-world racing leagues to fantastical settings.',
+            defination:
+                'Racing games are a video game genre in which the player participates in a racing competition with any type of land, water, air, or space vehicles. They may be based on anything from real-world racing leagues to fantastical settings.',
+            games: 'iRacing, BeamNG.drive, F1 2021',
         },
         {
             index: 7,
             categoryName: "Social",
             image: SocialGames,
-            defination: '',
+            defination:
+                'A social game may refer to tabletop, other face-to-face indoor or outdoor games, or video games that allow or require social interaction between players as opposed to games played in solitude, games played at tournaments or competitions or games played for money.',
+            games: 'Stardew Valley, Minecraft, FarmVille',
         },
         {
             index: 8,
             categoryName: "Sports",
             image: Sport,
-            defination: 
-            'A sports video game is a video game that simulates the practice of sports. Most sports have been recreated with a game, including team sports, track and field, extreme sports, and combat sports.',
+            defination:
+                'A sports video game is a video game that simulates the practice of sports. Most sports have been recreated with a game, including team sports, track and field, extreme sports, and combat sports.',
+            games: '',
         },
         {
             index: 9,
             categoryName: "Fantasy",
             image: Fantasy,
-            defination: '',
+            defination:
+                ' A game in which players assume the roles of characters and act out fantastical adventures, the outcomes of which are partially determined by chance, as by the roll of dice.',
+            games: 'Elden Ring, Genshin Impact, The Witcher 3: Wild Hunt',
         },
         {
             index: 10,
             categoryName: "Strategy",
             image: Strategy,
-            defination: '',
+            defination:
+                "A strategy game or strategic game is a game (e.g. a board game) in which the players' uncoerced, and often autonomous, decision-making skills have a high significance in determining the outcome. Almost all strategy games require internal decision tree-style thinking, and typically very high situational awareness.",
+            games: 'Into The Breach, FTL: Faster Than Light, XCOM 2',
         },
         {
             index: 11,
             categoryName: "Others",
             image: Others,
             defination: '',
+            games: '',
         },
     ]

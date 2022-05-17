@@ -1,6 +1,6 @@
 .wrapper-header {
   border-bottom: 1px solid $main-color;
-  
+
   .header {
     height: 100px;
     display: flex;
@@ -31,13 +31,11 @@
       &-item {
         display: inline-block;
         text-align: center;
-        width: 100px;
-        margin-left: 20px;
+        margin-left: 70px;
         font-size: 1rem;
         cursor: pointer;
         position: relative;
-        color: $main-color;
-
+        
         .item-text {
           color: $main-color;
         }
