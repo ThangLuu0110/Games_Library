@@ -1,20 +1,39 @@
 import React, { Component } from 'react';
 import { GameData } from '../../Block/const/const'
-import { getGameData } from '../../../api/gameList.api'
-interface GamesPageState {
-    GamesList: GameData[];
+import getGameData from '../../../api/gameList.api'
+
+interface GameProps{
+    gameList: GameData[];
 }
-
-export default class GamesPage extends Component {
+export default class GamesPage extends Component{
     state = {
-        GamesList: [],
-    } as GamesPageState;
+        gameList: [],
+    } as GameProps;
 
+    componentDidMount() {
+        getGameData()
+        .then(games => {
+            this.setState({
+                ...this.state,
+                gameList: games,
+            })  
+        }, () => {})
+    }
+        
     render() {
         return (
             <div className="content">
-
-            </div>
-        )
+            <ul>
+                {
+                    this.state.gameList.map(game => (
+                        <li key={game.id}>
+                            {game.title}
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
+    )
+    
     }
 }
