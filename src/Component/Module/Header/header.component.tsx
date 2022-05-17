@@ -1,14 +1,15 @@
 import clsx from 'clsx';
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/images/logo.png';
 
-interface HeaderProps{
+
+interface HeaderProps {
     activeTab: string;
     handleActiveTab: (e: any) => void;
 }
 
-export default function Header({ activeTab, handleActiveTab }:HeaderProps) {
+export default function Header({ activeTab, handleActiveTab }: HeaderProps) {
 
     const pageTitle: string = 'Games List';
 
@@ -21,14 +22,14 @@ export default function Header({ activeTab, handleActiveTab }:HeaderProps) {
     return (
         <header className="wrapper-header grid">
             <div className="header grid wide">
-                <div 
-                    className="header__logo" 
+                <div
+                    className="header__logo"
                     onClick={(e) => {
                         handleActiveTab('Home')
                     }}>
-                    <Link 
-                        to="/" 
-                        className="header__logo-link" 
+                    <Link
+                        to="/"
+                        className="header__logo-link"
                     >
                         <img src={logo} alt="" />
                         <span>

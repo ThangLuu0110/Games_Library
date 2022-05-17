@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { categoryList } from "../../Block/const/const";
+
 
 interface HomePageProps {
     handleActiveTab: (e: any) => void;
@@ -9,12 +9,12 @@ export default function HomePage({ handleActiveTab }: HomePageProps) {
     const categoryListName: Array<any> = categoryList;
 
     return (
-        <div className="content grid wide">
-            <div className="content__homepage grid">
-                <div className="content__homepage-title">
+        <div className="content grid">
+            <div className="homepage grid wide">
+                <div className="homepage-title">
                     <h1> CATEGORY </h1>
                 </div>
-                <ul className="content__homepage-category-list">
+                <ul className="homepage-category-list">
                     {
                         categoryListName.map(category => (
                             <li key={category.index} className="category-item">
@@ -27,13 +27,6 @@ export default function HomePage({ handleActiveTab }: HomePageProps) {
                                         <br />
                                         <b>Games: </b> {category.games}
                                     </p>
-                                    <button 
-                                        onClick={() => {handleActiveTab('Games')}}
-                                    >
-                                        <Link to="/games">
-                                            Click
-                                        </Link>
-                                    </button>
                                 </div>
                             </li>
                         ))
