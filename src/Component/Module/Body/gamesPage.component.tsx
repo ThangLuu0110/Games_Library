@@ -40,6 +40,7 @@ export default class GamesPage extends Component {
                                             <b>Title: </b>
                                             {game.title}
                                         </h2>
+
                                     </div>
                                 </li>
                             ))
