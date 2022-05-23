@@ -1,49 +1,46 @@
-import React, { Component } from 'react';
-import { GameData } from '../../Block/const/const'
-import getGameData from '../../../api/gameList.api'
+import React, { Component } from "react";
+import { GameData } from "../../Block/const/const";
+import getGameData from "../../../api/gameList.api";
+import { SearchTable } from "../../Block/search_table/searchTable";
 
 interface GameProps {
-    gameList: GameData[];
+  gamesList: Array<any>;
 }
 export default class GamesPage extends Component {
-    state = {
-        gameList: [],
-    } as GameProps;
+  state = {
+    gamesList: [],
+  } as GameProps;
 
-    componentDidMount() {
-        getGameData()
-            .then(games => {
-                console.log(games);
-                
-                this.setState({
-                    ...this.state,
-                    gameList: games,
-                })
-            }, () => { ;
-            })
-    }
+  componentDidMount() {
+    getGameData().then((games) => {
+      this.setState(
+        {
+          ...this.state,
+          gamesList: games,
+        },
+        () => {}
+      );
+    });
+  }
 
-    render() {
-        return (
-            <div className="content grid">
-                <div className="gamespage grid wide">
-                    <ul className="gamespage-list">
-                        {
-                            this.state.gameList.map(game => (
-                                <li key={game.id} className="items">
-                                    <div className="items-image">
-                                        <img src={`${game.thumbnail}`} alt="" />
-                                    </div>
-                                    <div className="items-info">
-                                        {game.title}
-                                    </div>
-                                </li>
-                            ))
-                        }
-                    </ul>
+  render() {
+    return (
+      <div className="content grid">
+        <SearchTable />
+        <div className="gamespage grid wide">
+          <ul className="gamespage-list">
+            {this.state.gamesList.map((game) => (
+              <li key={game.id} className="items">
+                <div className="items-image">
+                  <img src={`${game.thumbnail}`} alt="" />
                 </div>
-            </div>
-        )
-
-    }
+                <div className="items-name">{game.title}</div>
+                <div className="items-info"></div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    );
+  }
 }
