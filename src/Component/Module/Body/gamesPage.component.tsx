@@ -14,12 +14,13 @@ export default class GamesPage extends Component {
         getGameData()
             .then(games => {
                 console.log(games);
-                
+
                 this.setState({
                     ...this.state,
                     gameList: games,
                 })
-            }, () => { ;
+            }, () => {
+                ;
             })
     }
 
@@ -35,7 +36,10 @@ export default class GamesPage extends Component {
                                         <img src={`${game.thumbnail}`} alt="" />
                                     </div>
                                     <div className="items-info">
-                                        {game.title}
+                                        <h2 className="title">
+                                            <b>Title: </b>
+                                            {game.title}
+                                        </h2>
                                     </div>
                                 </li>
                             ))
