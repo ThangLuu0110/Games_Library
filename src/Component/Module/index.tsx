@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import AboutPage from './Body/aboutPage.component';
 import GamesPage from './Body/gamesPage.component';

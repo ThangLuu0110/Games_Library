@@ -9,7 +9,6 @@ import CardGames from "../../../assets/images/Cardgames_category.jpg";
 import SocialGames from "../../../assets/images/Socialgames_category.jpg";
 import Strategy from "../../../assets/images/Strategy_category.jpg";
 import BattleRoyale from "../../../assets/images/Battleroyale_category.jpg";
-import Others from "../../../assets/images/Others_category.jpg";
 
 export interface GameDetail {
   id: number;
@@ -43,19 +42,125 @@ export interface GameData {
   thumbnail: string;
 }
 
-export const gameCategory: Array<string> = [
-  'Battle Royal Game',
-  'MMORPG',
-  'Fighting',
-  'Shooter',
-  'Card Game',
-  'MOBA',
-  'Racing',
-  'Social',
-  'Sports',
-  'Fantasy',
-  'Strategy',
-  'Others'
+export const GameSort:  Array<{
+  index: number;
+  name: string;
+  value: string;
+}> = [
+  { 
+    index: 0, 
+    name: 'Arrange',
+    value: ''
+  },
+  {
+    index: 1,
+    name: 'Realese Date',
+    value: 'release-date',
+  },
+  {
+    index: 2,
+    name: 'Popularity',
+    value: 'popularity'
+  },
+  { 
+    index: 3, 
+    name: 'Alphabet',
+    value: 'alphabetical'
+  },
+  {
+    index: 4,
+    name: 'Relevance',
+    value: 'relevence',
+  },
+];
+
+export const GamePlatform: Array<{
+  index: number;
+  name: string;
+  value: string;
+}> = [
+  { 
+    index: 0, 
+    name: 'All',
+    value: ''
+  },
+  {
+    index: 1,
+    name: 'PC',
+    value: 'pc',
+  },
+  {
+    index: 2,
+    name: 'Browser',
+    value: 'browser'
+  }
+]
+
+export const GameCategory: Array<{
+  index: number;
+  name: string;
+  value: string;
+}> = [
+  {
+    index: 0,
+    name: 'All',
+    value: '',
+  },
+  {
+    index: 1,
+    name: 'Battle Royal Game',
+    value: 'battle-royale',
+  },
+  {
+    index: 2, 
+    name: 'MMORPG',
+    value: 'mmorpg',
+  },
+  {
+    index: 3, 
+    name: 'Fighting',
+    value: 'fighting'
+  },
+  {
+    index: 4, 
+    name: 'Shooter',
+    value: 'shooter'
+  },
+  {
+    index: 5, 
+    name: 'Card Game',
+    value: 'card'
+  },
+  {
+    index: 6, 
+    name: 'MOBA',
+    value: 'moba'
+  },
+  {
+    index: 7, 
+    name: 'Racing',
+    value: 'racing'
+  },
+  {
+    index: 8,
+    name: 'Social',
+    value: 'social'
+  },
+  {
+    index: 9,
+    name: 'Sports',
+    value: 'sports'
+  },
+  {
+    index: 10,
+    name: 'Fantasy',
+    value: 'fantasy'
+  },
+  {
+    index: 11,
+    name: 'Strategy',
+    value: 'strategy'
+  }
 ]
 
 export const categoryList: Array<{
@@ -152,12 +257,5 @@ export const categoryList: Array<{
     defination:
       "A strategy game or strategic game is a game (e.g. a board game) in which the players' uncoerced, and often autonomous, decision-making skills have a high significance in determining the outcome. Almost all strategy games require internal decision tree-style thinking, and typically very high situational awareness.",
     games: "Into The Breach, FTL: Faster Than Light, XCOM 2",
-  },
-  {
-    index: 11,
-    categoryName: "Others",
-    image: Others,
-    defination: "",
-    games: "",
   },
 ];
