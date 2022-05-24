@@ -1,0 +1,55 @@
+.search-table {
+    background-color: $items-color;
+    border-radius: 10px;
+    // border: 1px solid $main-color;
+    height: 150px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
+    .select-wrapper {
+        height: 80px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 10px;
+        margin: 0 10px;
+
+        label {
+            font-size: 1rem;
+            color: $main-color;
+            margin-right: 10px;
+        }
+
+        select {
+            height: 20px;
+            width: 150px;
+            font-size: 0.8rem;
+            background-color: $items-color;
+            border: none;
+            color: $main-color;
+            outline: none;
+            border-bottom: 1px solid $main-color;
+        }
+    }
+
+    .search-button{
+        margin-right: 20px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: none;
+        font-size: 1.2rem;
+        color: white;
+        background-color: $main-color;
+        cursor: pointer;
+
+        &:hover{
+            background-color: white;
+            border: 1px solid $main-color;
+            color: $main-color;
+        }
+    }
+
+}
