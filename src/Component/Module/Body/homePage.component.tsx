@@ -1,8 +1,15 @@
 import React, { Component } from "react";
 import { categoryList } from "../../Block/const/const";
 
-export default class HomePage extends Component {
+interface HomePageProps{
+  handleActiveTab: (e: any) => void;
+}
+export default class HomePage extends Component<HomePageProps> {
   categoryListName: Array<any> = categoryList;
+
+  componentDidMount() {
+    this.props.handleActiveTab('Home')
+}
 
   render() {
     return (

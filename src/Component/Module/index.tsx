@@ -34,9 +34,9 @@ export default function WebContent() {
                 pathname={window.location.pathname}
             />
             <Routes>
-                <Route path="/" element={<HomePage />} />
+                <Route path="/" element={<HomePage handleActiveTab={handleActiveTab}/>} />
                 <Route path="/about" element={<AboutPage />} />
-                <Route path="/game" element={<GamesPage />} />
+                <Route path="/game" element={<GamesPage handleActiveTab={handleActiveTab} />} />
             </Routes>
         </div>
     )

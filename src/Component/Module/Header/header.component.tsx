@@ -18,7 +18,6 @@ export default class Header extends Component<HeaderProps> {
     { index: 2, tabName: "Games", tabPath: "game" },
   ];
 
-
   render() {
     const { activeTab, handleActiveTab } = this.props;
 

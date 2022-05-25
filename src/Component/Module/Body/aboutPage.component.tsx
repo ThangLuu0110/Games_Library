@@ -1,10 +1,12 @@
-import React, {useEffect} from 'react';
+import React, {Component} from 'react';
 
-export default function AboutPage(){
-    useEffect(() => console.log('hello'))
-    return (
+export default class AboutPage extends Component {
+
+    render() {
+        return (
         <div className="content">
             about
         </div>
     )
+}
 }

@@ -4,19 +4,22 @@ import getGameData, { getGameDetail, searchGameData } from '../../../api/gameLis
 import SearchTable from '../../Block/search_table/searchTable';
 import { PopUpDetail } from '../../Block/const/components';
 
-interface GameProps {
+interface GameState {
     gameList: GameData[];
     gameDetail: GameDetail[];
     categorySelected: string;
     showPopUp: boolean;
 }
-export default class GamesPage extends Component {
+interface GameProps{
+    handleActiveTab: (e: any) => void;
+}
+export default class GamesPage extends Component<GameProps> {
     state = {
         gameList: [],
         gameDetail: [],
         categorySelected: '',
         showPopUp: false,
-    } as GameProps;
+    } as GameState;
 
     handleInit = () => {
         getGameData()
@@ -44,6 +47,7 @@ export default class GamesPage extends Component {
     }
 
     componentDidMount() {
+        this.props.handleActiveTab('Games')
         this.handleInit();
     }
 
