@@ -1,16 +1,21 @@
 import React, { Component } from 'react';
-import { GameData } from '../../Block/const/const'
-import getGameData, { searchGameData } from '../../../api/gameList.api'
+import { GameData, GameDetail } from '../../Block/const/const'
+import getGameData, { getGameDetail, searchGameData } from '../../../api/gameList.api'
 import SearchTable from '../../Block/search_table/searchTable';
+import { PopUpDetail } from '../../Block/const/components';
 
 interface GameProps {
     gameList: GameData[];
+    gameDetail: GameDetail[];
     categorySelected: string;
+    showPopUp: boolean;
 }
 export default class GamesPage extends Component {
     state = {
         gameList: [],
+        gameDetail: [],
         categorySelected: '',
+        showPopUp: false,
     } as GameProps;
 
     handleInit = () => {
@@ -20,8 +25,21 @@ export default class GamesPage extends Component {
                     ...this.state,
                     gameList: games,
                 })
-            }, () => {
-                ;
+            }, () => {})
+    }
+
+    handleInitDetail = (id: number) => {
+        getGameDetail(id)
+            .then(games => { 
+                this.setState({
+                    ...this.state,
+                    gameDetail: games,
+                    showPopUp: true,
+                },
+                    () => {
+                        
+                    }
+                )
             })
     }
 
@@ -29,12 +47,12 @@ export default class GamesPage extends Component {
         this.handleInit();
     }
 
-    handleSearch = (category: string, platform: string) => {
-        if (category === '' && platform === '') {
+    handleSearch = (category: string, platform: string, sort: string) => {
+        if (category === '' && platform === '' && sort === '') {
             this.handleInit()
         }
         else {
-            searchGameData(category, platform)
+            searchGameData(category, platform, sort)
                 .then(games => {
                     this.setState({
                         ...this.state,
@@ -50,24 +68,39 @@ export default class GamesPage extends Component {
         return (
             <div className="content grid">
                 <div className="gamespage grid wide">
-                    <SearchTable handleSearch={this.handleSearch} />
+                    <SearchTable
+                        handleSearch={this.handleSearch}
+                    />
                     <ul className="gamespage-list">
                         {this.state.gameList.length > 0 &&
                             this.state.gameList.map(game => (
                                 <li key={game.id} className="items">
-                                    <div className="items-image">
+                                    <div
+                                        className="items-image"
+
+                                    >
                                         <img src={`${game.thumbnail}`} alt="" />
                                     </div>
-                                    <div className="items-name">
+                                    <div className="items-name" onClick={() => {
+                                        this.handleInitDetail(game.id)
+                                    }}>
                                         {game.title}
+                                    </div>
+                                    <div className="items-infor">
+                                        <p><b>Publisher: </b>{game.publisher}</p>
+                                        <p><b>Released: </b>{game.release_date}</p>
+                                        <p><b> Description: </b><br />{game.short_description}</p>
                                     </div>
                                 </li>
                             ))
                         }
                     </ul>
+                    {this.state.showPopUp && <PopUpDetail gameDetail={this.state.gameDetail}/> }
                 </div>
             </div>
         )
 
     }
 }
+
+

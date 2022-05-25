@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import AboutPage from './Body/aboutPage.component';
 import GamesPage from './Body/gamesPage.component';
@@ -14,21 +14,24 @@ enum ActiveTab {
 type ActiveTabKey = keyof typeof ActiveTab;
 
 export default function WebContent() {
+    
     const [activeTab, setActiveTab] = useState<ActiveTabKey>(
         window.location.pathname === '/' ? 'Home' : (
-            window.location.pathname === '/about' ? 'About': 'Games'
+            window.location.pathname === '/about' ? 'About' : 'Games'
         )
     );
 
-    
+    useEffect(() => console.log(window.location.pathname))
+
     const handleActiveTab = (tabname: ActiveTabKey) => {
         setActiveTab(tabname);
     }
     return (
         <div className="grid">
-            <Header 
+            <Header
                 activeTab={activeTab}
                 handleActiveTab={handleActiveTab}
+                pathname={window.location.pathname}
             />
             <Routes>
                 <Route path="/" element={<HomePage />} />

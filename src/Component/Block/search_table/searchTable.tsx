@@ -24,7 +24,7 @@ interface SearchTableState {
   sortSelected: string;
 }
 
-interface SearchTableProps{
+interface SearchTableProps {
   handleSearch: (category: string, platform: string, sort: string) => void;
 }
 export default class SearchTable extends Component<SearchTableProps> {
@@ -63,39 +63,39 @@ export default class SearchTable extends Component<SearchTableProps> {
 
   searchGame = () => {
     this.props.handleSearch(
-      this.state.categorySelected, 
+      this.state.categorySelected,
       this.state.platformSelected,
       this.state.sortSelected
-      );
+    );
   }
 
   render() {
     return (
       <div className="search-table grid wide">
-        <Select
-          nameId="category"
-          nameLabel="Category"
-          listOptions={this.state.categoryList}
-          handleSelected={this.handleSelectCategory}
-        />
-        <Select
-          nameId="platform"
-          nameLabel="Platform"
-          listOptions={this.state.platformList}
-          handleSelected={this.handleSelectPlatform}
-        />
-        <Select
-          nameId="sort"
-          nameLabel="Sort By"
-          listOptions={this.state.sortList}
-          handleSelected={this.handleSelectSort}
-        />
-        <button 
-          className="search-button"
-          onClick={this.searchGame}
+          <Select
+            nameId="category"
+            nameLabel="Category"
+            listOptions={this.state.categoryList}
+            handleSelected={this.handleSelectCategory}
+          />
+          <Select
+            nameId="platform"
+            nameLabel="Platform"
+            listOptions={this.state.platformList}
+            handleSelected={this.handleSelectPlatform}
+          />
+          <Select
+            nameId="sort"
+            nameLabel="Sort By"
+            listOptions={this.state.sortList}
+            handleSelected={this.handleSelectSort}
+          />
+          <button
+            className="search-button"
+            onClick={this.searchGame}
           >
-          <BsSearch/>
-        </button>
+            <BsSearch />
+          </button>
       </div>
     );
 

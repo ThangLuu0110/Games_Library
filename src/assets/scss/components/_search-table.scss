@@ -2,7 +2,7 @@
     background-color: $items-color;
     border-radius: 10px;
     // border: 1px solid $main-color;
-    height: 150px;
+    height: 100px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -17,6 +17,7 @@
         margin: 0 10px;
 
         label {
+            font-weight: bold;
             font-size: 1rem;
             color: $main-color;
             margin-right: 10px;
@@ -34,8 +35,8 @@
         }
     }
 
-    .search-button{
-        margin-right: 20px;
+    .search-button {
+        margin-right: 30px;
         width: 50px;
         height: 50px;
         border-radius: 50%;
@@ -45,7 +46,7 @@
         background-color: $main-color;
         cursor: pointer;
 
-        &:hover{
+        &:hover {
             background-color: white;
             border: 1px solid $main-color;
             color: $main-color;

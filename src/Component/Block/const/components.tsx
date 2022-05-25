@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { GameDetail } from "./const";
 interface SelectProps {
   nameId: string;
   nameLabel: string;
@@ -30,4 +31,18 @@ export class Select extends Component<SelectProps> {
   }
 }
 
+interface PopUpDetailProps {
+  gameDetail: GameDetail[];
+}
 
+export class PopUpDetail extends Component<PopUpDetailProps>{
+  render() {
+    const { gameDetail } = this.props;
+    
+    return (
+      <div className="popup-wrapper">
+        
+      </div>
+    )
+  }
+}

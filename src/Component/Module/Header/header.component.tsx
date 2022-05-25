@@ -1,11 +1,12 @@
 import clsx from "clsx";
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../../assets/images/logo.png";
 
 interface HeaderProps {
   activeTab: string;
   handleActiveTab: (e: any) => void;
+  pathname: string;
 }
 
 export default class Header extends Component<HeaderProps> {
@@ -16,6 +17,7 @@ export default class Header extends Component<HeaderProps> {
     { index: 1, tabName: "About", tabPath: "about" },
     { index: 2, tabName: "Games", tabPath: "game" },
   ];
+
 
   render() {
     const { activeTab, handleActiveTab } = this.props;
