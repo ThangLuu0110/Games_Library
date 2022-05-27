@@ -6,7 +6,7 @@ import { PopUpDetail } from '../../Block/const/components';
 
 interface GameState {
     gameList: GameData[];
-    gameDetail: GameDetail[];
+    gameDetail: null | GameDetail;
     categorySelected: string;
     showPopUp: boolean;
 }
@@ -16,7 +16,7 @@ interface GameProps{
 export default class GamesPage extends Component<GameProps> {
     state = {
         gameList: [],
-        gameDetail: [],
+        gameDetail: null,
         categorySelected: '',
         showPopUp: false,
     } as GameState;
@@ -28,15 +28,20 @@ export default class GamesPage extends Component<GameProps> {
                     ...this.state,
                     gameList: games,
                 })
-            }, () => {})
+            }, () => {
+                this.setState({
+                    ...this.state,
+                    showPopUp: true,
+                })
+            })
     }
 
     handleInitDetail = (id: number) => {
         getGameDetail(id)
-            .then(games => { 
+            .then(game => { 
                 this.setState({
                     ...this.state,
-                    gameDetail: games,
+                    gameDetail: game,
                     showPopUp: true,
                 },
                     () => {

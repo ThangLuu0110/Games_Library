@@ -32,13 +32,15 @@ export class Select extends Component<SelectProps> {
 }
 
 interface PopUpDetailProps {
-  gameDetail: GameDetail[];
+  gameDetail: null | GameDetail;
 }
 
 export class PopUpDetail extends Component<PopUpDetailProps>{
   render() {
     const { gameDetail } = this.props;
     
+    console.log(gameDetail?.title);
+  
     return (
       <div className="popup-wrapper">
         

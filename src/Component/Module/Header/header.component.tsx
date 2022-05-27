@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import React, { Component, useEffect } from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../../assets/images/logo.png";
 

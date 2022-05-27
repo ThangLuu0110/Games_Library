@@ -21,8 +21,6 @@ export default function WebContent() {
         )
     );
 
-    useEffect(() => console.log(window.location.pathname))
-
     const handleActiveTab = (tabname: ActiveTabKey) => {
         setActiveTab(tabname);
     }
