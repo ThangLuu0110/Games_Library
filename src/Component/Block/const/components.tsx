@@ -38,12 +38,10 @@ interface PopUpDetailProps {
 export class PopUpDetail extends Component<PopUpDetailProps>{
   render() {
     const { gameDetail } = this.props;
-    
-    console.log(gameDetail?.title);
   
     return (
       <div className="popup-wrapper">
-        
+
       </div>
     )
   }

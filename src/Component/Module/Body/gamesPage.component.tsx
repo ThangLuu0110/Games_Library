@@ -29,14 +29,12 @@ export default class GamesPage extends Component<GameProps> {
                     gameList: games,
                 })
             }, () => {
-                this.setState({
-                    ...this.state,
-                    showPopUp: true,
-                })
+                
             })
     }
 
-    handleInitDetail = (id: number) => {
+    handleInitDetail = (id: number, e: any) => {
+        // e.preventDefault();
         getGameDetail(id)
             .then(game => { 
                 this.setState({
@@ -90,8 +88,8 @@ export default class GamesPage extends Component<GameProps> {
                                     >
                                         <img src={`${game.thumbnail}`} alt="" />
                                     </div>
-                                    <div className="items-name" onClick={() => {
-                                        this.handleInitDetail(game.id)
+                                    <div className="items-name" onClick={(e) => {
+                                        this.handleInitDetail(game.id, e)
                                     }}>
                                         {game.title}
                                     </div>
