@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { AiOutlineClose } from 'react-icons/ai';
 import { GameDetail } from "./const";
 interface SelectProps {
   nameId: string;
@@ -33,15 +34,21 @@ export class Select extends Component<SelectProps> {
 
 interface PopUpDetailProps {
   gameDetail: null | GameDetail;
+  closePopup: () => void;
 }
 
 export class PopUpDetail extends Component<PopUpDetailProps>{
   render() {
-    const { gameDetail } = this.props;
+    const { gameDetail, closePopup } = this.props;
   
     return (
-      <div className="popup-wrapper">
-
+      <div className="popup">
+        <div className="popup-cover"></div>
+        <div className="popup-wrapper">
+            <div className="closebtn" onClick={closePopup}>
+              <AiOutlineClose />
+            </div>
+        </div>
       </div>
     )
   }

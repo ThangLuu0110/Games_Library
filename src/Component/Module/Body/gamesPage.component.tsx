@@ -71,6 +71,13 @@ export default class GamesPage extends Component<GameProps> {
         };
     }
 
+    closePopup = () => {
+        this.setState({
+            ...this.state,
+            showPopUp: false,
+        }, () => {})
+    }
+
     render() {
         return (
             <div className="content grid">
@@ -102,7 +109,12 @@ export default class GamesPage extends Component<GameProps> {
                             ))
                         }
                     </ul>
-                    {this.state.showPopUp && <PopUpDetail gameDetail={this.state.gameDetail}/> }
+                    {this.state.showPopUp && 
+                        <PopUpDetail 
+                            gameDetail={this.state.gameDetail}
+                            closePopup={this.closePopup}
+                        /> 
+                    }
                 </div>
             </div>
         )
