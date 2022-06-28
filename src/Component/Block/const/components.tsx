@@ -45,11 +45,49 @@ export class PopUpDetail extends Component<PopUpDetailProps>{
       <div className="popup">
         <div className="popup-cover"></div>
         <div className="popup-wrapper">
+          <header className="popup-wrapper__header">
+            <nav className="header">
+              <div className="header__avatar">
+                <img src={gameDetail?.thumbnail} alt="logo" />
+              </div>
+              <span className="header__title">
+                {gameDetail?.title}
+              </span>
+              <span className="header__status">
+                {gameDetail?.status}
+              </span>
+            </nav>
             <div className="closebtn" onClick={closePopup}>
               <AiOutlineClose />
             </div>
+          </header>
+          <div className="content">
+            <aside className="content__side">
+                <p>Short description: {gameDetail?.short_description} </p>
+            </aside>
+            <section className="content__main">
+
+            </section>
+          </div>
+            {/* <aside className="">
+
+            </aside> */}
         </div>
       </div>
     )
   }
+}
+
+interface screenShotsProps{
+  id: number;
+  linkImage: string;
+}
+export class screenShots extends Component<screenShotsProps> {
+  render() {
+    const { id, linkImage } = this.props;
+    return (
+      <></>
+    )
+  }
+
 }
