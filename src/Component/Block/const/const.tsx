@@ -19,14 +19,14 @@ export interface GameDetail {
   description: string;
   publisher: string;
   genre: string;
-  releaseDate: string;
+  release_date: string;
   minimum_system_requirements: {
     os: string;
     processor: string;
     memory: string;
     graphics: string;
     storage: string;
-  }[];
+  };
   screenshots: {
     id: number;
     image: string;

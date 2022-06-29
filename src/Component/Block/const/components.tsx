@@ -40,7 +40,8 @@ interface PopUpDetailProps {
 export class PopUpDetail extends Component<PopUpDetailProps>{
   render() {
     const { gameDetail, closePopup } = this.props;
-  
+      console.log(gameDetail?.minimum_system_requirements.os);
+      
     return (
       <div className="popup">
         <div className="popup-cover"></div>
@@ -63,15 +64,40 @@ export class PopUpDetail extends Component<PopUpDetailProps>{
           </header>
           <div className="content">
             <aside className="content__side">
-                <p>Short description: {gameDetail?.short_description} </p>
+                <p> {gameDetail?.short_description} </p>
+                <p> Publisher: <br/> {gameDetail?.publisher} </p>
+                <p> Genre: <br/> {gameDetail?.genre} </p>
+                <p> Release Date: <br/> {gameDetail?.release_date} </p>
+                <table>
+                  <tr>
+                    <th>Minimum System Requirements</th>
+                  </tr>
+                  <tr>
+                    <td>OS</td>
+                    <td>{gameDetail?.minimum_system_requirements.os}</td>
+                  </tr>
+                  <tr>
+                    <td>Processor</td>
+                    <td>{gameDetail?.minimum_system_requirements.processor}</td>
+                  </tr>
+                  <tr>
+                    <td>Memory</td>
+                    <td>{gameDetail?.minimum_system_requirements.memory}</td>
+                  </tr>
+                  <tr>
+                    <td>Graphics</td>
+                    <td>{gameDetail?.minimum_system_requirements.graphics}</td>
+                  </tr>
+                  <tr>
+                    <td>Storage</td>
+                    <td>{gameDetail?.minimum_system_requirements.storage}</td>
+                  </tr>
+                </table>
             </aside>
             <section className="content__main">
 
             </section>
           </div>
-            {/* <aside className="">
-
-            </aside> */}
         </div>
       </div>
     )
