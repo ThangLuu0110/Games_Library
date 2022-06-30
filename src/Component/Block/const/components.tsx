@@ -70,7 +70,7 @@ export class PopUpDetail extends Component<PopUpDetailProps>{
                 <p> Release Date: <br/> {gameDetail?.release_date} </p>
                 <table>
                   <tr>
-                    <th>Minimum System Requirements</th>
+                    <th colSpan={2}>Minimum System Requirements</th>
                   </tr>
                   <tr>
                     <td>OS</td>
