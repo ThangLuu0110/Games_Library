@@ -91,13 +91,12 @@ export default class GamesPage extends Component<GameProps> {
                                 <li key={game.id} className="items">
                                     <div
                                         className="items-image"
-
                                     >
                                         <img src={`${game.thumbnail}`} alt="" />
                                     </div>
-                                    <div className="items-name" onClick={(e) => {
-                                        this.handleInitDetail(game.id, e)
-                                    }}>
+                                    <div className="items-name" 
+                                        onClick={(e) => {this.handleInitDetail(game.id, e)}}
+                                    >
                                         {game.title}
                                     </div>
                                     <div className="items-infor">

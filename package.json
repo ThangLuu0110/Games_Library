@@ -1,5 +1,5 @@
 {
-  "name": "games-shop",
+  "name": "game-shop",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -22,8 +22,10 @@
     "react-slick": "^0.29.0",
     "reactjs-popup": "^2.0.5",
     "sass": "^1.51.0",
+    "slick-carousel": "^1.8.1",
     "typescript": "^4.6.4",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "yarn": "^1.22.19"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -48,5 +50,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "description": "List Game Web",
+  "main": "index.js",
+  "repository": "https://github.com/ThangLuu0110/Games_Library.git",
+  "author": "Thang.LuuManh <thang.luumanh@vti.com.vn>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react-slick": "^0.23.10"
   }
 }

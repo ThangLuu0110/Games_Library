@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { AiOutlineClose } from 'react-icons/ai';
+import { AiOutlineClose, AiOutlineRight } from 'react-icons/ai';
 import { GameDetail } from "./const";
+
 interface SelectProps {
   nameId: string;
   nameLabel: string;
@@ -40,7 +41,6 @@ interface PopUpDetailProps {
 export class PopUpDetail extends Component<PopUpDetailProps>{
   render() {
     const { gameDetail, closePopup } = this.props;
-      console.log(gameDetail?.minimum_system_requirements.os);
       
     return (
       <div className="popup">
@@ -64,7 +64,7 @@ export class PopUpDetail extends Component<PopUpDetailProps>{
           </header>
           <div className="content">
             <aside className="content__side">
-                <p> {gameDetail?.short_description} </p>
+                <p className="content__side--short_description"> {gameDetail?.short_description} </p>
                 <p> Publisher: <br/> {gameDetail?.publisher} </p>
                 <p> Genre: <br/> {gameDetail?.genre} </p>
                 <p> Release Date: <br/> {gameDetail?.release_date} </p>
@@ -74,28 +74,31 @@ export class PopUpDetail extends Component<PopUpDetailProps>{
                   </tr>
                   <tr>
                     <td>OS</td>
-                    <td>{gameDetail?.minimum_system_requirements.os}</td>
+                    <td>{gameDetail?.minimum_system_requirements?.os || 'Unknown'}</td>
                   </tr>
                   <tr>
                     <td>Processor</td>
-                    <td>{gameDetail?.minimum_system_requirements.processor}</td>
+                    <td>{gameDetail?.minimum_system_requirements?.processor || 'Unknown'}</td>
                   </tr>
                   <tr>
                     <td>Memory</td>
-                    <td>{gameDetail?.minimum_system_requirements.memory}</td>
+                    <td>{gameDetail?.minimum_system_requirements?.memory || 'Unknown'}</td>
                   </tr>
                   <tr>
                     <td>Graphics</td>
-                    <td>{gameDetail?.minimum_system_requirements.graphics}</td>
+                    <td>{gameDetail?.minimum_system_requirements?.graphics || 'Unknown'}</td>
                   </tr>
                   <tr>
                     <td>Storage</td>
-                    <td>{gameDetail?.minimum_system_requirements.storage}</td>
+                    <td>{gameDetail?.minimum_system_requirements?.storage || 'Unknown'}</td>
                   </tr>
                 </table>
             </aside>
             <section className="content__main">
-
+              <ScreenShots screenshotsList={gameDetail?.screenshots}/>
+              <article className="content__main-description"> 
+                {gameDetail?.description}
+              </article>
             </section>
           </div>
         </div>
@@ -104,16 +107,19 @@ export class PopUpDetail extends Component<PopUpDetailProps>{
   }
 }
 
-interface screenShotsProps{
-  id: number;
-  linkImage: string;
+interface screenShotsProps {
+  screenshotsList: {
+    id: number;
+    image: string;
+  }[] | undefined;
 }
-export class screenShots extends Component<screenShotsProps> {
-  render() {
-    const { id, linkImage } = this.props;
-    return (
-      <></>
-    )
-  }
 
+export const ScreenShots = ({ screenshotsList } : screenShotsProps) => {
+  
+
+  return (
+    <div className="list-image-wrapper">
+       
+    </div>
+  )
 }

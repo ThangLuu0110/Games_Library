@@ -75,8 +75,28 @@
             display: grid;
             grid-template-columns: 2fr 6fr;
 
+            &__side, &__main{
+                padding: 4rem 1rem 1rem;
+                font-size: 0.8rem;
+                color: #fff;
+            }
+            
             &__side{
-                padding: 4rem 1.5rem 1rem;
+                &--short_description{
+                    text-indent: 10px;
+                }
+            }
+
+            &__main{
+                text-align: justify;
+                
+
+                .list-image-wrapper{
+                    height: 250px;
+                    margin-bottom: 10px;
+                    position: relative;
+
+                }
             }
 
         }
