@@ -92,9 +92,14 @@
                 
 
                 .list-image-wrapper{
+                    margin-top: -50px;
+                    display: grid;
                     height: 250px;
                     margin-bottom: 10px;
                     position: relative;
+                    grid-template-columns: 3fr 1fr;
+                    grid-gap: 10px;
+
 
                 }
             }

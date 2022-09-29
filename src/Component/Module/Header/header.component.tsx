@@ -31,7 +31,7 @@ export default class Header extends Component<HeaderProps> {
             }}
           >
             <Link to="/" className="header__logo-link">
-              <img src={logo} alt="" />
+              {/* <img src={logo} alt="" /> */}
               <span>{this.pageTitle}</span>
             </Link>
           </div>

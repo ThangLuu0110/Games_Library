@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import { AiOutlineClose, AiOutlineRight } from 'react-icons/ai';
 import { GameDetail } from "./const";
 
@@ -115,11 +115,26 @@ interface screenShotsProps {
 }
 
 export const ScreenShots = ({ screenshotsList } : screenShotsProps) => {
-  
+  const [linkImage, setLinkImage] = useState<string>(screenshotsList ? screenshotsList[0].image : '');
+
+  const changeMainImage = (id:number) => {
+    setLinkImage(screenshotsList ? screenshotsList[id].image : '');
+  }
 
   return (
-    <div className="list-image-wrapper">
-       
+    <div className="list-image-wrapper screenshot">
+      <div className="screenshot__main">
+          {screenshotsList && <img src={linkImage} className="" alt="" />}
+      </div>
+      <ul className="screenshot__list">
+        {
+          screenshotsList?.map((screenshots, index) => (
+            <li className="screenshot__list_item" onClick={() => {changeMainImage(index)}}>
+              <img src={screenshots.image} alt="" />
+            </li>
+          ))
+        }
+      </ul>
     </div>
   )
 }
